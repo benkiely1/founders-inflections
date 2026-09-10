@@ -1,6 +1,6 @@
 # Founders Inflections
 
-Keep prospective founders informed about technology changes from which he can form his own founder insights. Report developments and factual context; do not invent startup ideas, opportunity theses, or recommendations unless requested.
+Keep prospective founders informed about technology changes from which they can form their own founder insights. Report developments and factual context; do not invent startup ideas, opportunity theses, or recommendations unless requested.
 
 ## Research and selection
 

@@ -18,6 +18,12 @@ Editorial requirements are in [editorial.md](editorial.md), including one or two
 
 ## Cloud publishing setup status
 
-The website and build checks are ready. Weekly research and automatic issue generation are not yet enabled. They require an OpenAI API account and a repository Actions secret named `OPENAI_API_KEY`, followed by implementation and a successful end-to-end trial. Never place this key in site files or Git history.
+The website and build checks are ready. Weekly research and automatic issue generation are not yet enabled. They require an OpenAI API account and a repository Actions secret named `OPENAI_SECRET_KEY`, followed by implementation and a successful end-to-end trial. Never place this key in site files or Git history.
 
 The target schedule is Monday at 8 a.m. America/Indiana/Indianapolis. The existing local newsletter automation remains separate until the cloud workflow has been verified and the handover is complete.
+
+## Sol research trial
+
+Run the **Sol newsletter research trial** workflow manually in GitHub Actions. It uses `gpt-5.6-sol` with medium reasoning for a research pass and a separate source audit. Download the `sol-newsletter-trial` artifact for the draft, corrected draft/audit, and usage report. The trial never commits an issue or deploys the website. It has no automatic retries and a 35-minute job timeout. Each pass is limited to 30 tool calls and 12,000 output tokens. These limits constrain work but are not a dollar spending cap. The usage report estimates current standard API costs; actual platform billing is authoritative.
+
+Weekly automatic publishing remains disabled until a trial has been reviewed and the public hosting connection is verified.
