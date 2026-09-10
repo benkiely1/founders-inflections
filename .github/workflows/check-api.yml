@@ -1,0 +1,30 @@
+name: Check research API connection
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify API access without exposing the key
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_SECRET_KEY }}
+        run: |
+          python3 - <<'PY'
+          import os, urllib.request, urllib.error, json
+          key = os.environ.get('OPENAI_API_KEY')
+          if not key:
+              raise SystemExit('Missing OPENAI_SECRET_KEY repository secret')
+          request = urllib.request.Request('https://api.openai.com/v1/models', headers={'Authorization': 'Bearer ' + key})
+          try:
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  models = json.load(response)['data']
+              print('API authentication succeeded.')
+              available = {m['id'] for m in models}
+              for model in ['gpt-5.4', 'gpt-6-astra']:
+                  print(model + ': ' + ('available' if model in available else 'not listed'))
+          except urllib.error.HTTPError as error:
+              raise SystemExit('API authentication failed with HTTP ' + str(error.code))
+          PY
