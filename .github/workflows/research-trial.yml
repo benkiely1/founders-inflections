@@ -1,0 +1,28 @@
+name: Sol newsletter research trial
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: newsletter-research
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Research and verify a draft with Sol
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_SECRET_KEY }}
+        run: node scripts/research.mjs
+      - name: Save draft and cost report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sol-newsletter-trial
+          path: draft/
+          retention-days: 7
