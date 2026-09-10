@@ -23,9 +23,9 @@ jobs:
                   models = json.load(response)['data']
               print('API authentication succeeded.')
               available = {m['id'] for m in models}
-              for model in ['gpt-5.4', 'gpt-6-astra']:
+              for model in ['gpt-5.6-sol']:
                   print(model + ': ' + ('available' if model in available else 'not listed'))
-              payload = json.dumps({'model': 'gpt-5.4', 'input': 'Reply with OK.', 'max_output_tokens': 32}).encode()
+              payload = json.dumps({'model': 'gpt-5.6-sol', 'reasoning': {'effort': 'none'}, 'input': 'Reply with OK.', 'max_output_tokens': 32}).encode()
               paid_request = urllib.request.Request('https://api.openai.com/v1/responses', data=payload, headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})
               with urllib.request.urlopen(paid_request, timeout=90) as response:
                   result = json.load(response)
