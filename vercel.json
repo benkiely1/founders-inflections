@@ -1,0 +1,1 @@
+{"framework":null,"buildCommand":"node scripts/build.mjs","outputDirectory":"dist","installCommand":"echo Static archive uses Node built-ins","cleanUrls":true,"trailingSlash":true}
