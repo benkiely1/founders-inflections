@@ -1,8 +1,8 @@
 {
   "date": "2026-09-14",
   "title": "Search, storefront defenses, and new execution paths",
-  "coverage": "Coverage September 7\u201313, 2026. Research cutoff September 14, 2026 at 8:20 a.m. EDT (America/Indiana/Indianapolis).",
-  "intro": "A shorter edition with five verified developments: easier outage discovery, an emergency storefront defense, reusable AI search, and two changes to software execution. September 7\u20138 overlaps the first issue\u2019s coverage; previously covered releases are omitted. The focus is on documented behavior and limits, without speculative founder insights.",
+  "coverage": "Coverage September 7\u201313, 2026. Research cutoff September 14, 2026 at 8:20 a.m. EDT (America/Indiana/Indianapolis). Updated September 15 with Apple\u2019s September 9 launch announcements.",
+  "intro": "A shorter edition with five verified developments plus an Apple launch roundup: easier outage discovery, an emergency storefront defense, reusable AI search, and two changes to software execution. September 7\u20138 overlaps the first issue\u2019s coverage; previously covered releases are omitted. The focus is on documented behavior and limits, without speculative founder insights.",
   "stories": [
     {
       "title": "Internet outages become easier to find",
@@ -131,6 +131,42 @@
           "title": "Vercel announcement",
           "url": "https://vercel.com/changelog/build-with-openai-agents-api-on-vercel",
           "date": "2026-09-10"
+        }
+      ]
+    },
+    {
+      "title": "Also worth knowing: Apple\u2019s September launch",
+      "category": "Major product launches",
+      "eventDate": "2026-09-09",
+      "paragraphs": [
+        {
+          "label": "iPhone Duo",
+          "text": "Apple announced its first foldable iPhone, with a 7.6-inch inner display and a 5.4-inch outer display. The practical change is more room for reading, video calls, and two apps side by side. Apple describes new developer interfaces for adapting apps to the folding design. Pre-orders begin October 16, with availability from October 23; it was announced this week, not released for immediate purchase."
+        },
+        {
+          "label": "The wider lineup",
+          "text": "The event also introduced iPhone 18 Pro and Pro Max, Apple Watch Series 12 and Ultra 4, and AirPods 5. Apple highlights a variable-aperture main camera and A20 Pro chip in the Pro phones, new health sensing in the Watch lineup, and improved open-ear noise cancellation in AirPods. These are substantial consumer launches worth following even where their longer-term effect on software businesses is not yet clear."
+        },
+        {
+          "label": "Availability and context",
+          "text": "Apple lists September 18 availability for the Pro phones, new Watches, and AirPods 5. Its September 11 update also lists Mac mini and Mac Studio arriving in stores September 22. Availability differs by product; announced features and vendor performance claims should not be confused with independently demonstrated results. This roundup was added September 15 to correct an omission from the original issue."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Apple introduces iPhone Duo",
+          "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+          "date": "September 9, 2026"
+        },
+        {
+          "title": "Apple launch lineup and availability",
+          "url": "https://www.apple.com/newsroom/2026/09/get-ready-to-experience-iphone-18-pro-the-new-apple-watch-lineup-and-airpods-5/",
+          "date": "September 11, 2026"
+        },
+        {
+          "title": "Apple September announcements",
+          "url": "https://www.apple.com/newsroom/archive/",
+          "date": "September 9, 2026"
         }
       ]
     }

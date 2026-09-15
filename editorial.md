@@ -27,3 +27,7 @@ Start with the title Founders Inflections, issue date, coverage window, and a sh
 
 Use concise plain English, explain unfamiliar terms, and avoid hype. Optional brief follow-ups may track previously covered releases whose availability or evidence changed. Do not add speculative founder insights.
 
+
+## Major launches also worth knowing
+
+Check major consumer technology launch events as part of weekly discovery, including Apple events. Include a concise “Also worth knowing” roundup when significant new products warrant awareness even without a demonstrated technology inflection. Explain practical changes in plain English, link original announcements, and distinguish announcement dates, preorder dates, shipping dates, and features promised later. Avoid treating routine refreshes as proven inflections. Do not omit an entire major event solely because it falls outside SaaS infrastructure.
