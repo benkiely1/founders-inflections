@@ -1,0 +1,138 @@
+{
+  "date": "2026-09-14",
+  "title": "Search, storefront defenses, and new execution paths",
+  "coverage": "Coverage September 7\u201313, 2026. Research cutoff September 14, 2026 at 8:20 a.m. EDT (America/Indiana/Indianapolis).",
+  "intro": "A shorter edition with five verified developments: easier outage discovery, an emergency storefront defense, reusable AI search, and two changes to software execution. September 7\u20138 overlaps the first issue\u2019s coverage; previously covered releases are omitted. The focus is on documented behavior and limits, without speculative founder insights.",
+  "stories": [
+    {
+      "title": "Internet outages become easier to find",
+      "category": "Internet visibility",
+      "eventDate": "2026-09-08",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Cloudflare added Internet events and outages to Radar search. Readers can search descriptions or a place or network and open the relevant view. This is a discovery update to an existing Internet monitoring service."
+        },
+        {
+          "label": "The practical change",
+          "text": "For example, if customers in one region cannot reach a business website, a support team can look for a wider outage in that location. Links retain the event dates, helping someone compare the period before, during, and after a disruption. This is an illustrative use, not evidence that the tool can diagnose every customer complaint."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The release also exposes these results to browser agents through WebMCP, an interface that lets software use website tools. Finding a related event does not establish that it caused an individual application failure. The announcement does not claim complete visibility into every outage."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Cloudflare announcement",
+          "url": "https://developers.cloudflare.com/changelog/product/radar/",
+          "date": "2026-09-08"
+        }
+      ]
+    },
+    {
+      "title": "A new protective rule for online storefronts",
+      "category": "Commerce security",
+      "eventDate": "2026-09-10",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Cloudflare released an emergency blocking rule for an actively exploited vulnerability in Adobe Commerce and Magento Open Source. Cloudflare says an attacker without a login could exploit the template system to execute code on the store server."
+        },
+        {
+          "label": "The practical change",
+          "text": "In everyday terms, this concerns the software running a shop, not merely a suspicious customer purchase. A web application firewall filters incoming requests before they reach that software. The new rule adds an immediate protective layer for this specific attack while the underlying application is repaired."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Cloudflare identifies the flaw as CVE-2026-75650 and points to Adobe bulletin APSB26-146. Its notice says blocking traffic does not repair an existing compromise: application updates and replacement of potentially exposed credentials remain necessary. This report describes the vendor mitigation, not a guarantee that a store is secure."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Cloudflare announcement",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-09-10-emergency-waf-release/",
+          "date": "2026-09-10"
+        }
+      ]
+    },
+    {
+      "title": "Search can stay the same when the AI model changes",
+      "category": "AI search and integration",
+      "eventDate": "2026-09-10",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Vercel added Tako Search to AI Gateway and announced that the search tool is free there through September 30. The integration works across Gateway models without requiring a separate Tako account or key."
+        },
+        {
+          "label": "The practical change",
+          "text": "The tool combines a curated knowledge graph with live web retrieval. Results can include source links, data cards, and visualizations, with filters for website domain and publication date. For developers, the concrete change is a reusable search integration even when they change the model that writes the answer."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The free period is a temporary promotion for the search tool, not a statement that model inference or the entire application is free. Source links also do not independently establish accuracy. The announcement gives neither a permanent post-promotion price nor an independent comparison of retrieval quality."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Vercel announcement",
+          "url": "https://vercel.com/changelog/tako-search-is-free-on-ai-gateway-through-september-30th",
+          "date": "2026-09-10"
+        }
+      ]
+    },
+    {
+      "title": "FastAPI static files can bypass application execution",
+      "category": "Python web deployment",
+      "eventDate": "2026-09-10",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Vercel now promotes eligible FastAPI frontend and static files to its content delivery network during the build. Requests for those files no longer invoke a Vercel Function, the service that executes application code."
+        },
+        {
+          "label": "The practical change",
+          "text": "This changes the delivery path for assets such as a built frontend or images. Instead of running Python to serve each eligible request, the delivery network supplies the file. Earlier-declared application routes still take precedence, and source directories remain in the function bundle unless explicitly excluded."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Frontends protected by dependency checks and files behind middleware remain on the function by default because those checks cannot run on the delivery network. Configuration can override that behavior. This is a routing and execution change; the announcement provides no measured speed improvement or total-cost saving for a particular application."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Vercel announcement",
+          "url": "https://vercel.com/changelog/fastapi-frontends-and-static-files-served-from-the-cdn",
+          "date": "2026-09-10"
+        }
+      ]
+    },
+    {
+      "title": "Managed agent sessions gain a Vercel deployment path",
+      "category": "Agent infrastructure",
+      "eventDate": "2026-09-10",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Vercel published an integration for applications using the OpenAI Agents API. OpenAI manages the agent loop and session state; Vercel hosts the application and supplies an isolated Sandbox for code execution and file access."
+        },
+        {
+          "label": "The practical change",
+          "text": "The integration connects sessions to persistent workspaces, so files can survive follow-up instructions. Signed notifications and Vercel Queues coordinate sandbox creation and reconnection. Its architecture can scale to zero instead of keeping an application worker running continuously."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "This is an integration and reference deployment, not proof that agents reliably complete arbitrary business tasks. Developers still need to configure application permissions, account access, and the services involved. The announcement gives no all-in operating-cost benchmark. It is distinct from the Cursor execution integration covered in the previous issue."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Vercel announcement",
+          "url": "https://vercel.com/changelog/build-with-openai-agents-api-on-vercel",
+          "date": "2026-09-10"
+        }
+      ]
+    }
+  ]
+}
