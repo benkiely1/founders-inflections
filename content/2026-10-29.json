@@ -1,0 +1,240 @@
+{
+  "date": "2026-10-29",
+  "title": "Document assistants, app distribution, and new Apple hardware",
+  "coverage": "Seven-day window: October 21 at 9:08 p.m. through October 28, 2026 at 9:08 p.m. EDT (America/Indiana/Indianapolis). Research cutoff: October 29 at 01:08 UTC. Issue dated October 29 in Dublin.",
+  "intro": "Eight developments span everyday productivity, commerce, software security, cloud delivery, and Apple hardware. The first two explain business workflows without requiring a technical background. Coverage gap: the previous published edition was September 14; September 14 through the start of this window is not comprehensively covered. This edition resumes current reporting rather than presenting older announcements as new. Availability and vendor claims are identified throughout.",
+  "stories": [
+    {
+      "title": "Apple brings assistants inside everyday documents",
+      "category": "Productivity and accessible technology",
+      "eventDate": "2026-10-27",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Apple announced document-aware assistants for Keynote, Pages, and Numbers as part of its next Creator Studio update. They can help refine slides, restructure writing, and organize or visualize spreadsheet data within the application."
+        },
+        {
+          "label": "The practical change",
+          "text": "For someone preparing a sales presentation, the proposed workflow is to work on the actual deck with an assistant that can see its context, instead of repeatedly moving text between a chatbot and a slide editor. Apple also announced Model Context Protocol support, a standard connection through which outside AI tools can read and edit these documents. Keynote gains an open JSON-based interchange format for external tools."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "These are November updates, not features confirmed available today. The assistants are beta features, initially in U.S. English, on Apple Intelligence-capable devices with version 27 or later of the relevant operating system. MCP requires macOS 27 or later. Existing Creator Studio subscribers receive the update without an additional charge; free editions of the productivity apps remain available."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Apple — Creator Studio update",
+          "url": "https://www.apple.com/ca/newsroom/2026/10/apple-creator-studio-adds-powerful-new-ai-features-and-even-more-creative-tools/",
+          "date": "October 27, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Shopify lets themes carry companion apps",
+      "category": "Commerce and accessible technology",
+      "eventDate": "2026-10-28",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Shopify theme developers can now bundle a storefront app with a Theme Store listing. The listing can show the companion app, its pricing, and media, and merchants can install the theme and app through one flow."
+        },
+        {
+          "label": "The practical change",
+          "text": "A merchant choosing a shop design could also obtain a matching product configurator, subscription tool, or wishlist without separately searching for a compatible app. For developers, this adds a distribution route beside the app itself: the theme becomes a place where customers discover functionality. Shopify App Pricing handles monetization; the announcement does not make these add-ons automatically free."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The app must already be published and owned by the same partner organization as the theme. Listed and unlisted apps qualify. Each theme can carry one app add-on, while that app can be reused across multiple themes. Priority review is available for developers building add-ons, but normal review requirements still apply."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Shopify — Theme app add-ons",
+          "url": "https://shopify.dev/changelog/posts/introducing-theme-app-add-ons-build-and-bundle-apps-with-your-themes",
+          "date": "October 28, 2026"
+        }
+      ]
+    },
+    {
+      "title": "AWS connects vulnerability findings to reviewable fixes",
+      "category": "Software security",
+      "eventDate": "2026-10-22",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "AWS made Continuum for code vulnerabilities generally available. It combines source code with optional AWS infrastructure context to assess which weaknesses are reachable, prioritize their business impact, and propose repairs."
+        },
+        {
+          "label": "The practical change",
+          "text": "A team can move from a scanner warning to supporting evidence and a proposed code change in the same workflow. For findings it can reproduce, Continuum runs an exploit in an isolated environment and attaches reproduction steps. Connected repositories can receive a pull request containing a patch, dependency upgrade, or configuration change. This is more context than a generic severity score, though AWS has not demonstrated universal detection accuracy in this announcement."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Launch regions are Northern Virginia and Oregon. Code can come from GitHub or an appropriately configured Amazon S3 bucket. Every fix currently requires human approval; an opened pull request does not mean a vulnerability has been resolved. Autonomous remediation under customer-defined controls is described as future functionality."
+        }
+      ],
+      "sources": [
+        {
+          "title": "AWS — Continuum general availability",
+          "url": "https://aws.amazon.com/blogs/aws/aws-continuum-for-code-vulnerabilities-is-now-generally-available/",
+          "date": "October 22, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Cloudflare reduces unnecessary large file transfers",
+      "category": "Cloud infrastructure",
+      "eventDate": "2026-10-23",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Cloudflare introduced Origin Range Requests as a self-service cache feature on all plans. It changes how the network retrieves parts of a file from the original server, with no manual range-size tuning."
+        },
+        {
+          "label": "The practical change",
+          "text": "When a viewer jumps forward in a video, the player may need only a small piece of the file. Cloudflare says its previous caching approach could fetch 128 MiB for such a request. The rebuilt system coordinates partial fetches, reducing unnecessary transfer and disk work. Similar requests arise when resuming a download or reading a portion of a software package."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The feature is enabled with a Cache Rule; it does not change which bytes the client requests. Cloudflare reports roughly halving its R2 p99 time to first byte, a measure of the slowest one percent of initial responses. That is a vendor result for the described workload, not a promise that every website will become twice as fast."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Cloudflare — Origin Range Requests",
+          "url": "https://blog.cloudflare.com/origin-range-requests/",
+          "date": "October 23, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Geographic key controls begin a quantum resistant transition",
+      "category": "Encryption and data infrastructure",
+      "eventDate": "2026-10-23",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Cloudflare launched a closed beta of its post-quantum GeoKey Manager for the Data Localization Suite. It wraps decryption keys so that only Cloudflare servers in an allowed geography can recover them, using a design intended to resist future quantum attacks."
+        },
+        {
+          "label": "The practical change",
+          "text": "Two separate requirements meet here: controlling where a key can be used and protecting encrypted material that may remain sensitive for years. The threat is that an attacker can collect encrypted data now and attempt to decrypt it later with more capable hardware. Geographic restrictions alone do not address that problem."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "This is a restricted beta, with general availability planned for the first quarter of 2027. The announcement concerns key-management protection; it is not evidence that every part of a customer application is quantum resistant or that all of its data remains within one country. Those properties depend on the rest of the system and its configuration."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Cloudflare — Post-quantum GeoKey Manager",
+          "url": "https://blog.cloudflare.com/post-quantum-geo-key-manager/",
+          "date": "October 23, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Vercel adds continuous integration beyond builds",
+      "category": "Developer workflow",
+      "eventDate": "2026-10-28",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Vercel CI entered beta for Turborepo projects. Developers mark tasks with a CI tag, and those tasks run on code pushes. Continuous integration means automatically checking a change, such as running tests or checking code style, before relying on it."
+        },
+        {
+          "label": "The practical change",
+          "text": "The service handles affected-task selection, task caching, dependency installation once per run, and dependency caching between updates. A repository can therefore reuse its task definitions for more of the verification work around a deployment. This is relevant as coding agents create changes more quickly and the checking queue becomes a constraint."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The announcement is specifically a beta for Turborepo workflows. Vercel reports two-to-six-times shorter waits in its own repositories, which is an internal result rather than an independent benchmark. Faster orchestration also cannot compensate for missing tests: teams still determine what their verification tasks actually check."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Vercel — CI beta",
+          "url": "https://vercel.com/changelog/vercel-ci-is-now-in-beta",
+          "date": "October 28, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Box files become a working folder for sandboxed agents",
+      "category": "Business files and automation",
+      "eventDate": "2026-10-28",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Box Mount can now synchronize a Box folder with a directory in Vercel Sandbox. An agent can read and write the files through ordinary filesystem operations, rather than needing a different interaction for each file operation."
+        },
+        {
+          "label": "The practical change",
+          "text": "Vercel demonstrates reviewing a synthetic contract and saving the result back to Box. The important connection is between temporary computing and persistent business files: the sandbox can disappear while completed work remains in Box. The synchronization process and agent run as different users, keeping Box credentials outside the agent workspace."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Box Mount remains in private preview and requires access from Box. The folder must be unmounted before stopping the sandbox so written results are retained as described. Credential separation does not establish the quality of an agent’s review or make its edits automatically appropriate; the demonstration shows an integration, not validated professional judgment."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Vercel — Box Mount in Sandbox",
+          "url": "https://vercel.com/changelog/box-mount-now-runs-in-vercel-sandbox",
+          "date": "October 28, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Also worth knowing Apple ships Duo and announces new Macs",
+      "category": "Consumer technology follow-up",
+      "eventDate": "2026-10-28",
+      "paragraphs": [
+        {
+          "label": "Now in stores",
+          "text": "iPhone Duo reached Apple Store locations on October 23. This is a material availability follow-up to the foldable phone announcement covered in the September 14 issue, rather than another announcement of the same product. Customers can now try it in stores and buy it online."
+        },
+        {
+          "label": "New interaction on Mac",
+          "text": "On October 28, Apple announced 14- and 16-inch MacBook Pro models with a tandem OLED PROLED XDR display and touchscreen interaction. Apple describes direct manipulation of photos, slides, and 3D models, plus updated gesture interfaces for developers. These models use M5 Pro or M5 Max. Preorders opened October 28, with availability planned for November 6."
+        },
+        {
+          "label": "Other hardware drops",
+          "text": "Separately, Apple announced a 14-inch M6 MacBook Pro and M6 iMac on October 27, also scheduled for November 6 after October 28 preorders. The iPad mini announced October 26 adds an 8.5-inch OLED screen, A20 Pro, and water and dust resistance, with the same preorder and availability dates. Its resistance rating is a protection specification, not a claim of indestructibility."
+        },
+        {
+          "label": "What remains unproven",
+          "text": "These announcements establish product changes and release schedules. They do not yet establish independent performance results or how widely customers will adopt new touch and folding workflows. The touchscreen MacBook Pro and the M6 MacBook Pro are distinct announcements; their processor and display features should not be conflated."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Apple — iPhone Duo reaches stores",
+          "url": "https://www.apple.com/newsroom/2026/10/iphone-duo-arrives-at-apple-store-locations-worldwide/",
+          "date": "October 23, 2026"
+        },
+        {
+          "title": "Apple — Touchscreen MacBook Pro",
+          "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display/",
+          "date": "October 28, 2026"
+        },
+        {
+          "title": "Apple — M6 MacBook Pro",
+          "url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+          "date": "October 27, 2026"
+        },
+        {
+          "title": "Apple — M6 iMac",
+          "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-new-imac-with-m6/",
+          "date": "October 27, 2026"
+        },
+        {
+          "title": "Apple — iPad mini update",
+          "url": "https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/",
+          "date": "October 26, 2026"
+        }
+      ]
+    }
+  ]
+}

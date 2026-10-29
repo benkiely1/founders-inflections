@@ -1,11 +1,14 @@
 import assert from 'node:assert/strict';
-import {mkdtempSync,cpSync,readFileSync,writeFileSync,rmSync} from 'node:fs';
+import {mkdtempSync,cpSync,readFileSync,writeFileSync,rmSync,mkdirSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
 const tmp=mkdtempSync(join(tmpdir(),'newsletter-check-'));
 try {
- for(const folder of ['scripts','content','public'])cpSync(resolve(folder),join(tmp,folder),{recursive:true});
+ for(const folder of ['scripts','public'])cpSync(resolve(folder),join(tmp,folder),{recursive:true});
+ // Keep the two-issue fixture independent of the growing publication archive.
+ mkdirSync(join(tmp,'content'));
+ cpSync(resolve('content/2026-09-09.json'),join(tmp,'content/2026-09-09.json'));
  const original=JSON.parse(readFileSync('content/2026-09-09.json','utf8'));
  const fixture={...original,date:'2026-09-14',title:'Archive routing fixture <script>unsafe</script>'};
  writeFileSync(join(tmp,'content/2026-09-14.json'),JSON.stringify(fixture));
