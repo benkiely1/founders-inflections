@@ -1,0 +1,217 @@
+{
+  "date": "2026-11-02",
+  "title": "Files in chat, controlled automation, and an orbital AI test",
+  "coverage": "Coverage October 26–November 1, 2026 in America/Indiana/Indianapolis. Research cutoff November 2, 2026 at 1:56 p.m. EST (18:56 UTC). Event dates identify release or announcement dates; the orbital experiment was reported October 30.",
+  "intro": "This edition covers eight developments in productivity, customer service, product design, software delivery, cloud networking, and experimental compute. The opening stories explain concrete changes to familiar workflows. The window overlaps the October 29 edition; stories already covered there, including Apple’s hardware announcements, are omitted. Several GitHub Universe releases fall inside this window but were not in that edition. Vendor descriptions establish announced capabilities and access conditions, not independent proof of productivity or performance.",
+  "stories": [
+    {
+      "title": "Gemini makes the document part of the conversation",
+      "category": "Everyday productivity",
+      "eventDate": "2026-10-29",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Google added generation, previews, and direct editing of documents, PDFs, presentations, spreadsheets, and other files inside the Gemini chat interface. A user can expand a file, type changes manually, select a passage to discuss, or ask Gemini to revise it."
+        },
+        {
+          "label": "The practical change",
+          "text": "The file can remain visible while the conversation continues. Google demonstrates turning handwritten lecture notes into a PDF study guide and refining it in place. For a business user, the analogous workflow is drafting a brief and correcting individual sections without repeatedly copying the entire answer into a separate editor. That business example illustrates the interface change; it is not a measured productivity result."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Google says these capabilities are available to all users in the languages and markets where the Gemini app is available. PDF preview and editing work on web and mobile. Google Docs, Sheets, slide decks, Markdown, text, and code are supported on the web only. The announcement does not establish that generated figures, citations, or document formatting will always be correct; review remains part of preparing a finished file."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Google — Edit and preview files in Gemini",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly/",
+          "date": "October 29, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Customer service flows can change without rewiring every phone number",
+      "category": "Business operations",
+      "eventDate": "2026-10-30",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Amazon Connect Customer added versions and aliases for flows and flow modules. A flow describes how a customer interaction proceeds, such as which menu or queue a caller reaches. A saved version is immutable, while an alias is a stable name that points to the chosen version."
+        },
+        {
+          "label": "The practical change",
+          "text": "A company can test a revised call-handling flow while live callers continue using the current one. Its phone numbers and queues can reference a production alias. When testing is complete, changing that alias moves those resources to the new version in one update, rather than relinking each resource individually. This separates preparing a customer-experience change from putting it in front of customers."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The feature is available in every AWS Region offering Amazon Connect Customer. Teams must adopt aliases in the relevant resource configuration to obtain the shared switch. Versioning makes rollout management clearer; it does not verify that a new menu, routing rule, or automated interaction is well designed. The announcement describes deployment control, not a demonstrated improvement in customer satisfaction."
+        }
+      ],
+      "sources": [
+        {
+          "title": "AWS — Connect flow versioning and aliasing",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/connect-flows-versioning-aliasing/",
+          "date": "October 30, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Replica turns a team design system into interactive prototypes",
+      "category": "Product design and open source",
+      "eventDate": "2026-10-28",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "GitHub Design released Replica under the MIT open-source license. It uses a team’s existing components, interface patterns, and documentation to guide AI-generated prototypes. Designers set that guidance, and teammates describe and refine an interaction through natural language in the GitHub Copilot app."
+        },
+        {
+          "label": "The practical change",
+          "text": "A product manager can explore how a new filter or screen should behave using the product’s own building blocks. The result is an interactive prototype that colleagues can try, rather than only a written specification or static picture. The approach makes the quality of the existing design system important: the tool is guided by the components and instructions the team supplies."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Replica is available now for local prototyping. An optional, self-hosted Replica Hub provides sharing and comments, and the source can be customized. Open-source availability does not make every model service or hosting arrangement free. A convincing prototype also does not demonstrate that authentication, data storage, accessibility, or production reliability have been implemented. Those remain separate checks before a concept becomes a working product."
+        }
+      ],
+      "sources": [
+        {
+          "title": "GitHub — Replica open-source release",
+          "url": "https://github.blog/changelog/2026-10-28-introducing-replica-an-open-source-ai-prototyping-tool/",
+          "date": "October 28, 2026"
+        }
+      ]
+    },
+    {
+      "title": "GitHub makes agent workflows generally available",
+      "category": "Developer automation",
+      "eventDate": "2026-10-28",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "GitHub Agentic Workflows reached general availability. Developers describe tasks in Markdown, and the tooling compiles those instructions into GitHub Actions workflow files. Supported uses include issue triage, investigating failed checks, updating documentation, and writing tests."
+        },
+        {
+          "label": "The practical change",
+          "text": "An agent can run as part of the repository’s automation environment, using existing runner groups and organizational policies. The release adds stronger budget forecasting, model choices per workflow, and support for additional execution environments. This moves some recurring analysis from an interactive coding session into a triggered job. It does not automatically convert an existing local assistant task into a cloud workflow; the workflow still needs to be configured."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The project is available on github.com across Free, Team, and Enterprise plans. The default Copilot CLI engine requires a Copilot license; other coding agents can be supplied. Agents are read-only by default, execute in a sandbox behind a firewall, and pass proposed changes through output validation and threat detection. These are controls around execution, not a guarantee that every generated change is correct or that every workflow is cost-free."
+        }
+      ],
+      "sources": [
+        {
+          "title": "GitHub — Agentic Workflows general availability",
+          "url": "https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available/",
+          "date": "October 28, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Dependency controls gain more precise versions and risk signals",
+      "category": "Software supply chain security",
+      "eventDate": "2026-10-28",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "GitHub released two distinct improvements. Actions workflow lockfiles are generally available, letting a workflow use readable version names while executing exact recorded commits. Separately, Dependabot reachability analysis entered public preview for JavaScript and TypeScript, checking whether application code can call a vulnerable dependency function."
+        },
+        {
+          "label": "The practical change",
+          "text": "Lockfiles cover actions and their indirect dependencies, reducing unexpected changes when an upstream tag moves. Teams can adopt them workflow by workflow, and Dependabot updates the matching lock entry when it proposes an action upgrade. Reachability adds evidence to security triage: it traces possible calls from the application into vulnerable functions instead of relying solely on the presence of an affected package."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Lockfiles are available on Free, Team, and Enterprise Cloud plans, including data residency. They pin what runs; they do not establish that the pinned code is safe. Reachability is a free Enterprise Cloud preview, including its analysis minutes, and requires a supported package lockfile. It runs on GitHub-hosted infrastructure, with some large or complex repositories unsupported. Potentially reachable findings should be treated as reachable; unavailable results need normal triage. An unreachable verdict lowers priority but never closes an alert automatically."
+        }
+      ],
+      "sources": [
+        {
+          "title": "GitHub — Actions workflow lockfiles",
+          "url": "https://github.blog/changelog/2026-10-28-github-actions-workflow-lockfiles-are-generally-available/",
+          "date": "October 28, 2026"
+        },
+        {
+          "title": "GitHub — Dependabot reachability preview",
+          "url": "https://github.blog/changelog/2026-10-28-prioritize-dependabot-alerts-with-reachability-analysis/",
+          "date": "October 28, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Cloudflare extends public web protections to private servers",
+      "category": "Cloud networking",
+      "eventDate": "2026-10-30",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Cloudflare services for private origins moved from a closed beta to general availability. A proxied domain record can point at a private server address, with requests reaching that server over existing Cloudflare One connectivity. The server does not need a publicly reachable address."
+        },
+        {
+          "label": "The practical change",
+          "text": "A company can expose a customer or partner endpoint through Cloudflare while retaining a private network path to the underlying application. Web application firewall rules, caching, bot management, rate limits, and Workers remain available. Previously, the described alternatives included exposing a public address, opening an inbound firewall port, or running connector software alongside the application."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Customers need the Private Origins entitlement enabled through their account team and suitable Cloudflare One connectivity. Unified Routing is required except for Cloudflare Tunnel connections. Argo Smart Routing and Dedicated CDN Egress IPs are unsupported, and origin health checks require Load Balancing. Private connectivity protects the route to the server; it does not by itself decide which customers may use the public endpoint. Application authentication and authorization remain separate concerns."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Cloudflare — Services for private origins",
+          "url": "https://blog.cloudflare.com/private-origins-public-to-private/",
+          "date": "October 30, 2026"
+        }
+      ]
+    },
+    {
+      "title": "An orbital AI experiment produces its first response",
+      "category": "Compute research",
+      "eventDate": "2026-10-30",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Google reported that its Project Suncatcher prototype produced an AI response using a data-center-class TPU in orbit. TPUs are Google’s processors designed for machine-learning workloads. The announcement describes an onboard Gemma 4 model receiving a prompt from the ground and returning a generated poem during a satellite pass."
+        },
+        {
+          "label": "The practical change",
+          "text": "This is evidence of an early end-to-end computing experiment: upload a request, execute a model in orbit, and receive the result back on Earth. Google also reports early machine-learning tests and prompts about payload telemetry. The satellite launched on October 1; the new development reported this week is the successful response, not the launch itself."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "This is a research prototype, not a cloud service that developers can buy. Thermal-stress and radiation tests are still ahead, and Google identifies two interconnected satellites in 2027 as its next milestone. The announcement gives no demonstrated commercial cost, sustained throughput, or service reliability. A successful short response therefore establishes a technical milestone, without establishing that space-based computing is competitive with terrestrial infrastructure."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Google — Suncatcher prototype response",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/",
+          "date": "October 30, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Also worth knowing Fitbit Edge reaches stores",
+      "category": "Consumer technology",
+      "eventDate": "2026-10-30",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Google announced retail availability of Fitbit Edge. Its launch note highlights a larger, brighter display than earlier Fitbit trackers, physical side buttons, and a wrist-contoured design. The everyday change is how users read and operate the tracker during normal use, rather than a newly established software-platform shift."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Google lists compatibility with most phones running Android 11 or later or iOS 16.4 or later. A Google Account, Google Health app, and internet connection are required, and some features need a separate Google Health Premium subscription. The product is not intended for medical purposes. This is an availability note, not an independent assessment of its measurements or a buying recommendation."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Google — Fitbit Edge retail availability",
+          "url": "https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge-on-shelves-now/",
+          "date": "October 30, 2026"
+        }
+      ]
+    }
+  ]
+}
