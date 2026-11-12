@@ -1,0 +1,221 @@
+{
+  "date": "2026-11-11",
+  "title": "Accessible viewing, network switching, and new software limits",
+  "coverage": "Coverage November 4–10, 2026 in America/Indiana/Indianapolis. Research cutoff November 11, 2026 at 8:52 p.m. EST (November 12 at 01:52 UTC). Dates below identify announcements or releases; future availability is stated separately.",
+  "intro": "Eight developments cover consumer accessibility, connectivity, AI models, media production, data storage, and software integrations. The first two explain changes to everyday experiences without requiring a technical background. Coverage gap: the November 2 edition ended on November 1, so November 2–3 is not comprehensively covered here. This edition resumes the latest seven completed days and does not repeat earlier stories. Apple’s sign-language announcement is included as a substantive product update; its November 13 launch is still ahead.",
+  "stories": [
+    {
+      "title": "Apple TV adds a discoverable sign language option",
+      "category": "Everyday accessibility",
+      "eventDate": "2026-11-10",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Apple announced sign-language interpretation for supported titles in the Apple TV app, debuting November 13 with Being Heumann. American Sign Language and British Sign Language interpretation will also be available for F1, with additional films planned later this year."
+        },
+        {
+          "label": "The practical change",
+          "text": "A viewer will be able to enable the feature in settings, identify compatible titles by an icon, and turn on interpretation during playback. Search phrases such as “with ASL” will help people find supported films. Apple says the experience was designed and tested with Deaf and native signers, with performances crafted for individual films. This adds a way to experience the story beyond reading captions."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "November 10 is the announcement date; November 13 is the promised debut. The feature applies to selected titles, rather than providing automatic interpretation of the entire catalogue. Apple lists version 27.2 or later of its relevant operating systems, or supported third-party devices with the latest app software. It is a curated accessibility feature, not a claim of automated sign-language translation."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Apple — Sign Language interpretation in Apple TV",
+          "url": "https://www.apple.com/uk/newsroom/2026/11/apple-tv-introduces-new-sign-language-interpretation-feature/",
+          "date": "November 10, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Google Fi can switch between two cellular networks",
+      "category": "Everyday connectivity",
+      "eventDate": "2026-11-10",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Google Fi began rolling out automatic switching between two 5G networks on eligible Pixel phones across its plans. When the primary connection drops, the service can move data to a secondary connection. Google also expanded automatic access to selected Wi-Fi networks."
+        },
+        {
+          "label": "The practical change",
+          "text": "For someone using maps or messaging while travelling, the intended benefit is fewer manual attempts to recover from a weak connection. In crowded locations, Wi-Fi Auto Connect+ can connect without a separate hotspot login and encrypts the connection. These are changes in how the phone obtains connectivity; Google’s broad speed and coverage claims do not establish the experience at a particular address."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Cellular switching starts with Pixel 9 and newer, with Fi active on an eSIM and non-Fi SIMs disabled. Switching and 5G are not available everywhere. The Wi-Fi feature has broader Pixel support and is rolling out to selected Samsung and Motorola devices. International use is included on Unlimited Premium and Flexible plans, subject to data limits and restrictions on extended use abroad."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Google — Fi network switching rollout",
+          "url": "https://blog.google/products-and-platforms/products/google-fi-wireless/super-network/",
+          "date": "November 10, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Gemini 4 Carbon opens to paying developers",
+      "category": "AI models and development",
+      "eventDate": "2026-11-10",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Google released Gemini 4 Carbon to paying developers and enterprises through its API offerings, and began rolling it out to Google AI Ultra subscribers in its applications. Google positions Carbon for difficult, sustained tasks such as multi-step debugging and scientific reasoning, using more tokens for exploration and verification than Argon."
+        },
+        {
+          "label": "The practical change",
+          "text": "Developers gain another model to evaluate for workflows that involve many linked steps. Google also previewed coordinated agent teams in Antigravity. The model release and that preview are distinct access changes; neither demonstrates that a particular application can safely run without review. Performance rankings in the announcement are vendor-reported here and have not been independently reproduced for this edition."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Public-model API introductory pricing is $2 per million input tokens and $10 per million output tokens through November 30. Google states subsequent pricing of $4 and $20 respectively. A job that consumes more tokens can cost more even at a similar unit price. Access to Carbon for cybersecurity defenders through the Fairwind Program is a separate, application-based route."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Google — Gemini 4 Carbon availability and pricing",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+          "date": "November 10, 2026"
+        },
+        {
+          "title": "Google — Carbon developer access",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/",
+          "date": "November 10, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Video processing can generate subtitles in the same workflow",
+      "category": "Media software",
+      "eventDate": "2026-11-06",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "AWS integrated Elemental Inference Smart Subtitles directly into MediaConvert, its service for preparing video files for distribution. A video-processing job can now include automated transcription and subtitle generation, reducing the need for a separate captioning pipeline."
+        },
+        {
+          "label": "The practical change",
+          "text": "A team publishing training videos or product demonstrations can prepare the video and its captions together. Custom dictionaries can guide recognition of brand names, technical terms, and other unusual words. Outputs can be separate text-based subtitle files or captions burned into the video. The former keeps captions separate from the picture; the latter makes them part of the image."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The announcement lists native transcription support for English, French, German, Italian, Portuguese, and Spanish. Availability follows Elemental Inference regions, including Northern Virginia, Oregon, Ireland, Mumbai, and Sydney. These are supported transcription languages, not a promise of translation between every language pair. Dictionaries provide guidance rather than guaranteed accuracy, so unusual terminology and important spoken details still warrant checking before publication."
+        }
+      ],
+      "sources": [
+        {
+          "title": "AWS — Smart Subtitles in MediaConvert",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/mediaconvert-elemental-smart-subtitles/",
+          "date": "November 6, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Redshift lifts a constraint on storing long text",
+      "category": "Data infrastructure",
+      "eventDate": "2026-11-06",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Amazon Redshift expanded the maximum individual string within its SUPER data type from 65,535 bytes to 16 million bytes. SUPER holds structured and semi-structured information. The larger limit is enabled through a database parameter and applies to ingestion and data transformations."
+        },
+        {
+          "label": "The practical change",
+          "text": "Long text such as a contract or terms and conditions can be brought into the warehouse without splitting it solely to fit the former string limit. Teams can query the data with SQL and use functions including JSON_PARSE, CONCAT, and LISTAGG with the larger inputs and outputs. This removes a specific preparation constraint for pipelines that mix records with lengthy text."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The enhancement is available wherever Redshift operates, including its AWS GovCloud regions, but requires opting in. The stated limit is measured in bytes, so the number of characters depends on text encoding. It concerns individual strings inside SUPER; it should not be read as an increase to every Redshift type or every possible file-size limit. Larger accepted values also do not establish faster queries."
+        }
+      ],
+      "sources": [
+        {
+          "title": "AWS — Larger strings in Redshift SUPER",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-redshift-expands-super-to-16-million-bytes/",
+          "date": "November 6, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Serverless Airflow separates connection details from workflow code",
+      "category": "Workflow infrastructure",
+      "eventDate": "2026-11-06",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Amazon Managed Workflows for Apache Airflow Serverless added support for Airflow connections and variables. Airflow coordinates tasks such as moving data between systems. The update lets those tasks retrieve connection details and configuration through standard Airflow methods at runtime."
+        },
+        {
+          "label": "The practical change",
+          "text": "A workflow that reads a database and calls an external API can obtain its credentials from a configured secrets backend, instead of embedding those values in the workflow code. Supported choices include AWS Secrets Manager, Systems Manager Parameter Store, or a custom backend. Non-secret settings can be supplied as environment variables. This makes credentials and configuration independently managed parts of the workflow."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The feature is available in every region supporting MWAA Serverless. The workflow must be configured to use the chosen backend, and its execution role must have permission to retrieve the values. This is support for a standard integration mechanism, not an automatic migration of existing credentials or a guarantee that all external databases and APIs are reachable without additional network configuration."
+        }
+      ],
+      "sources": [
+        {
+          "title": "AWS — MWAA Serverless connections and variables",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/mwaa-serverless-connections-variables/",
+          "date": "November 6, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Shopify introduces explicit access for bulk data operations",
+      "category": "Commerce integrations",
+      "eventDate": "2026-11-06",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Shopify now requires partner-built apps to have separate permission for bulk queries and bulk mutations in the GraphQL Admin API. Queries read data; mutations change it. Starting a bulk operation without the relevant access returns an access-denied error across API versions."
+        },
+        {
+          "label": "The practical change",
+          "text": "An app that periodically imports a large catalogue or exports orders has another operational prerequisite to track. Existing bulk users were enabled automatically, but access to an operation type is removed after 31 days without using it. That can matter for infrequent jobs: an installation can remain in place while the ability to run a dormant bulk operation expires."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The requirement covers public and custom apps built by partners. Apps merchants create in Shopify admin or the Dev Dashboard are currently excluded. Partners enable the required operation types in the Partner Dashboard under API access requests. No new app version or merchant reinstall is required, and access applies across the stores with the app installed. This is an access-control change, not an announced increase in bulk processing speed or volume."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Shopify — Bulk operation access requirements",
+          "url": "https://shopify.dev/changelog/posts/partner-apps-must-enable-bulk-operations-before-use",
+          "date": "November 6, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Cloudflare makes personal agent traffic easier to identify and control",
+      "category": "Web security and distribution",
+      "eventDate": "2026-11-04",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Cloudflare introduced a Personal Assistants category in Security Analytics and more granular policies for supported agents. Site operators can inspect agent request counts, paths, response codes, and networks, then set different access choices for individual supported assistants."
+        },
+        {
+          "label": "The practical change",
+          "text": "A shop can distinguish an assistant browsing product pages from other automated traffic, and see where that assistant encounters errors. Policy options include allowing an agent, blocking it, or blocking it on pages containing advertising. Search and training crawler policies remain separate. This gives operators more specific controls than treating every automated visit as the same kind of bot."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The announcement describes controls for supported personal agents; it does not establish identification of every agent on the web. Linking activity to particular user accounts relies on Account Abuse Protection, which is in early access. Recognizing an agent also does not establish what a customer authorized it to do. Cloudflare identifies preserving that user context as further work, so agent recognition should not be treated as a complete authorization system."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Cloudflare — Personal agent visibility and policies",
+          "url": "https://blog.cloudflare.com/personal-agents-visibility-control/",
+          "date": "November 4, 2026"
+        }
+      ]
+    }
+  ]
+}
