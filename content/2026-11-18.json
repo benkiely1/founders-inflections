@@ -1,0 +1,216 @@
+{
+  "date": "2026-11-18",
+  "title": "Everyday assistants and more connected software",
+  "coverage": "Coverage November 11–17, 2026. Research cutoff November 18, 2026 at 5:10 PM EST.",
+  "intro": "This week brings broader task execution in Gemini and Apple’s new shared home screen, alongside practical changes to developer automation, credential management, storage and commerce APIs. Eight developments show what is newly available, what remains in preview and which integrations need updating.",
+  "stories": [
+    {
+      "title": "Gemini starts handling everyday errands",
+      "category": "Everyday technology",
+      "eventDate": "2026-11-17",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Google began rolling out an expanded Tasks mode in Gemini, powered by Gemini 4 Hydrogen. The assistant can work across connected services to arrange appointments, investigate bills and help complete purchases. Google describes free access rolling out in the US, Japan, Korea, Canada, Australia and India, with advanced features starting in the US."
+        },
+        {
+          "label": "The practical change",
+          "text": "A person can ask for a service appointment and have the assistant call businesses and add the booking to their calendar. Shopping can use Google Pay with a spending cap; Google says purchases require confirmation or pre-approval. Its grocery example still hands the customer to Instacart to finish the order. These are examples from Google, not independent reliability tests."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Calling is unavailable in Indiana, Louisiana, Minnesota, Montana and Nebraska. Google acknowledges failed or incomplete tasks and says some websites still require a human to finish. Users can interrupt tasks, disconnect apps and change permissions. The expansion of what Gemini can do is substantial, but availability differs by feature and location."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Google — Expanded Tasks in Gemini",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+          "date": "November 17, 2026"
+        }
+      ]
+    },
+    {
+      "title": "GitHub lets automation wait for updates instead of repeatedly checking",
+      "category": "Developer tools and automation",
+      "eventDate": "2026-11-17",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "GitHub introduced Event Streams in preview. An application subscribes to a pull request—a proposed code change—and holds a connection open to receive updates. Supported events include submitted reviews, new commits, merge conflicts, closure or merging, and changes to automated check suites."
+        },
+        {
+          "label": "The practical change",
+          "text": "Without an incoming webhook receiver, developers commonly poll: repeatedly ask whether something changed. Frequent checks consume request allowances; infrequent checks delay responses. Event Streams supplies a push-based alternative without requiring a publicly reachable webhook endpoint. That also makes it usable by an agent running on a laptop, provided its connection remains open."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Access is available on all GitHub plans only after waitlist approval. This is a preview, not unrestricted general availability. GitHub describes reduced wasted requests and faster reactions, but provides no quantified independent performance result in this announcement. The release concerns receiving pull-request events; it does not itself host or execute the automation that responds to them."
+        }
+      ],
+      "sources": [
+        {
+          "title": "GitHub — Event Streams preview",
+          "url": "https://github.blog/changelog/2026-11-17-github-event-streams-is-now-in-preview/",
+          "date": "November 17, 2026"
+        }
+      ]
+    },
+    {
+      "title": "AWS can synchronize credentials across separate accounts",
+      "category": "Cloud security",
+      "eventDate": "2026-11-13",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "AWS Secrets Manager added cross-account replication. Secrets—such as credentials used by applications—can now have synchronized copies in a second AWS account. This extends the service’s existing replication across geographic regions to account boundaries."
+        },
+        {
+          "label": "The practical change",
+          "text": "A central security team can rotate a credential while applications in other accounts read their local copies. AWS says the design avoids shared encryption keys and cross-account policies on the secret itself. Each replica is an independent resource encrypted with a customer-managed key owned by its account. Updates to the primary secret, including rotations, propagate automatically."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The feature is available wherever Secrets Manager is offered. A replica can also be promoted to a standalone secret, supporting recovery or failover arrangements. The concrete change is managed synchronization and account-local ownership; it does not establish that an entire application is disaster-proof. The announcement links to normal service pricing rather than promising free replication."
+        }
+      ],
+      "sources": [
+        {
+          "title": "AWS — Secrets Manager cross-account replication",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/secrets-manager-cross-account/",
+          "date": "November 13, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Shopify sends much larger commerce events without an extra fetch",
+      "category": "Commerce infrastructure",
+      "eventDate": "2026-11-17",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Shopify increased its Amazon EventBridge delivery limit from 256 KB to 1,000,000 bytes. Webhooks and Events are notifications sent when something changes in a store. Larger orders or products with many variants can now arrive with their data included, rather than forcing the receiving app to retrieve it separately."
+        },
+        {
+          "label": "The practical change",
+          "text": "Previously, oversized classic webhooks supplied only an identifier, while oversized Events supplied a temporary download link. The larger inline allowance reduces those follow-up Admin API calls and downloads. Shopify deliberately leaves room beneath EventBridge’s own entry limit for the surrounding event metadata."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The change applies automatically to existing subscriptions across all API versions. Data above the new limit still uses the old fallback paths, so apps must retain that handling. Shopify also warns that systems downstream of EventBridge may enforce smaller limits. This removes one common handoff in an integration; it does not remove every size constraint in the delivery chain."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Shopify — Larger EventBridge webhook payloads",
+          "url": "https://shopify.dev/changelog/posts/amazon-eventbridge-webhook-payload-size-limit-increased-to-1-mb",
+          "date": "November 17, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Temporary files can now expire automatically in Vercel Blob",
+      "category": "Storage and SaaS operations",
+      "eventDate": "2026-11-17",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Vercel Blob added automatic deletion using a time to live, or TTL. Developers can specify a file’s lifetime at upload, from one to 730 days. The timer starts from the upload date. This covers ordinary uploads, copies, image writes, multipart uploads and presigned upload URLs."
+        },
+        {
+          "label": "The practical change",
+          "text": "For an application that creates downloadable reports, the export can carry its own expiry instead of requiring the app to schedule a separate cleanup task. Write results and file metadata expose the planned expiration time. Existing files can also have their TTL changed or removed without another upload, individually or in batches of up to 1,000."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The announcement presents this as available functionality; command-line support requires Vercel CLI 65.16.0 or later. Expiry is optional and must be configured. The documented one-day minimum matters for applications needing shorter retention. This is a storage lifecycle feature, and should not be mistaken for a claim that copies downloaded elsewhere will also disappear."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Vercel — Automatic deletion with Blob TTLs",
+          "url": "https://vercel.com/changelog/vercel-blob-now-supports-ttls-for-automatic-deletion",
+          "date": "November 17, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Shopify changes how shopping agents ask store questions",
+      "category": "APIs and interoperability",
+      "eventDate": "2026-11-11",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Shopify is replacing its Storefront MCP policies-and-FAQs tool with the UCP MCP Ask tool. MCP connects an AI application to external tools; UCP is the Universal Commerce Protocol. The replacement, ask_business, answers buyer questions using a store’s policies and knowledge base."
+        },
+        {
+          "label": "The practical change",
+          "text": "The response changes from raw facts or full policy text to a written answer. An integration asking about returns therefore needs to handle an answer rather than assume it receives a document to parse. Developers must change the endpoint and tool call, identify their agent profile, and declare support for the Ask capability. Optional buyer context can include country or language."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The old tool remains maintained until January 15, 2027, which is the stated migration deadline. Developers should check which tools a store offers to their agent profile. This is a concrete interface and response-format migration, not merely a renamed feature. Shopify’s November 11 announcement falls after the previous issue’s November 10 coverage cutoff."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Shopify — Migration to UCP MCP Ask",
+          "url": "https://shopify.dev/changelog/posts/storefront-mcp-policies-and-faqs-tool-is-being-deprecated-in-favor-of-ucp-mcp-ask-tool",
+          "date": "November 11, 2026"
+        }
+      ]
+    },
+    {
+      "title": "AWS Batch gains finer security controls for Kubernetes jobs",
+      "category": "Compute and security",
+      "eventDate": "2026-11-13",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "AWS Batch added security settings for jobs running on Amazon EKS, its managed Kubernetes service. Kubernetes organizes applications into containers and pods. Batch job definitions can now specify Linux capabilities, seccomp profiles and security settings that apply across a pod."
+        },
+        {
+          "label": "The practical change",
+          "text": "Capabilities restrict which privileged operating-system operations a container can perform. Seccomp restricts system calls—the requests software makes to the operating system. AWS says these settings let Batch jobs run in clusters enforcing Kubernetes’ restricted security profile while requesting only the privileges and calls they need. Teams can express these constraints in the job definition rather than leave them implicit."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "The settings are available in all regions offering AWS Batch and can be configured through the console, command line, software development kits or CloudFormation templates. Container settings override pod-level defaults. This provides finer configuration controls; teams still need to choose appropriate settings for their workloads. The announcement does not claim automatic hardening of existing jobs."
+        }
+      ],
+      "sources": [
+        {
+          "title": "AWS — Batch on EKS security context controls",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-batch-eks-security-context/",
+          "date": "November 13, 2026"
+        }
+      ]
+    },
+    {
+      "title": "Also worth knowing Apple HomeView reaches stores",
+      "category": "Everyday technology and hardware",
+      "eventDate": "2026-11-13",
+      "paragraphs": [
+        {
+          "label": "What changed",
+          "text": "Apple HomeView went on sale on November 13. The seven-inch shared home display combines FaceTime, music, calendars, smart-home controls and Siri AI. This week’s milestone is retail availability. Both the tabletop and wall-mounted models start at $299 in the US; mounting hardware is separately priced."
+        },
+        {
+          "label": "The practical change",
+          "text": "The everyday change is a shared screen that can show different personal information for different household members. Apple says it recognizes up to six people and can use onscreen context. Personal content appears only when the person is recognized and their paired iPhone or iPad is present and recently unlocked. Deeper personal-context features require an Apple Intelligence-enabled iPhone or iPad."
+        },
+        {
+          "label": "Availability and limits",
+          "text": "Sales opened in Australia, Canada, India, New Zealand, Singapore, the UK and the US. It is unavailable in the EU, where Apple says Siri AI on iOS is unavailable. Siri AI on HomeView launches in English, with Canadian French promised later. This is worth tracking as a new household interface, without treating shipment as proof of adoption."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Apple — HomeView retail availability",
+          "url": "https://www.apple.com/newsroom/2026/11/apple-homeview-available-today/",
+          "date": "November 13, 2026"
+        }
+      ]
+    }
+  ]
+}
